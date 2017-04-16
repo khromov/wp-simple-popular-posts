@@ -1,0 +1,140 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SPP\n"
+"POT-Creation-Date: 2014-09-26 16:28+0100\n"
+"PO-Revision-Date: 2014-10-01 11:42+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: Z:\\bloggar.lajka.idg.se\\trunk\\wp-content\\plugins"
+"\\simple-popular-posts\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: templates\n"
+
+#: includes/visual-composer-integration.php:3
+msgid "Simple Popular Posts"
+msgstr "Simple Popular Posts"
+
+#: includes/visual-composer-integration.php:6
+msgid "Adds a popular posts list"
+msgstr "Lägger in en lista med populära poster"
+
+#: includes/visual-composer-integration.php:16
+msgid "Period"
+msgstr "Period"
+
+#: includes/visual-composer-integration.php:19
+msgid "Past day"
+msgstr "Senaste dagen"
+
+#: includes/visual-composer-integration.php:20
+msgid "Past week"
+msgstr "Senaste veckan"
+
+#: includes/visual-composer-integration.php:21
+msgid "Past month"
+msgstr "Senaste månaden"
+
+#: includes/visual-composer-integration.php:22
+msgid "Past year"
+msgstr "Senaste året"
+
+#: includes/visual-composer-integration.php:23
+msgid "Total"
+msgstr "Totalt"
+
+#: includes/visual-composer-integration.php:25
+msgid "Select from which period popular posts will be fetched"
+msgstr "Välj från vilken period populära inlägg väljs ut"
+
+#: includes/visual-composer-integration.php:31
+msgid "Title"
+msgstr "Titel"
+
+#: includes/visual-composer-integration.php:33
+#, fuzzy
+msgid "Popular posts"
+msgstr "Simple Popular Posts"
+
+#: includes/visual-composer-integration.php:34
+msgid "Set a title that will be displayed before the list"
+msgstr "Sätt en titel som dyker upp innan listan"
+
+#: includes/visual-composer-integration.php:39
+msgid "Network options"
+msgstr "Nätverksinställningar"
+
+#: includes/visual-composer-integration.php:41
+msgid "Fetch posts from multisite network"
+msgstr "Hämtas inlägg från hela nätverket"
+
+#: includes/visual-composer-integration.php:42
+msgid ""
+"Uses WPMUDev Post Indexer to fetch posts from the entire multisite network"
+msgstr "Hämtar inlägg från hela nätverket via WPMUDev Post Indexer"
+
+#: includes/visual-composer-integration.php:47
+msgid "Limit"
+msgstr "Antal"
+
+#: includes/visual-composer-integration.php:50
+msgid "Limit the amount of posts to show"
+msgstr "Välj hur många inlägg att visa"
+
+#: simple-popular-posts.php:49
+msgid "Your stats"
+msgstr "Din statistik"
+
+#: simple-popular-posts.php:60
+msgid "Post stats"
+msgstr "Statistik"
+
+#: simple-popular-posts.php:75
+msgid "Page views on your posts"
+msgstr "Totalt antal sidvisningar på dina inlägg"
+
+#: simple-popular-posts.php:94
+msgid "Page views on this post"
+msgstr "Antal sidvisningar på detta inlägg"
+
+#: simple-popular-posts.php:406
+msgid "Simple Popular Posts Error"
+msgstr "Simple Popular Posts: Fel"
+
+#: simple-popular-posts.php:409
+msgid ""
+"Network query was specified, but Post Indexer is not installed. Please "
+"install Post Indexer or set network=\"false\""
+msgstr ""
+"Network Query är valt, men Post Indexer är inte installerad. Installera Post "
+"Indexer eller sätt network=false"
+
+#: templates/spp-item.php:3
+msgid "today"
+msgstr "denna dag"
+
+#: templates/spp-item.php:4 templates/spp-item.php:9
+msgid "this week"
+msgstr "denna vecka"
+
+#: templates/spp-item.php:5
+msgid "this month"
+msgstr "denna månad"
+
+#: templates/spp-item.php:6
+msgid "this year"
+msgstr "detta år"
+
+#: templates/spp-item.php:7
+msgid "total"
+msgstr "totalt"
+
+#: templates/spp-item.php:23
+msgid "views"
+msgstr "visningar"
