@@ -15,26 +15,28 @@ License: GPL2
 class Simple_Popular_Posts
 {
 	public static $td = 'spp';
-	public static $post_types = array('post'); //,'page'
+	public static $post_types = array();
 	public static $disable_self_stats = true; /* If true, users can't increase stats when visiting their own post */
 
 	/* Used for storing scores when using "relative" display_value */
 	//private static $scores = array();
 
 	/**
-	 * Constructor sets up all our hooks
+     * Constructor sets up all our hooks
+     *
+	 * Simple_Popular_Posts constructor.
 	 */
 	function __construct()
 	{
-		//TODO: add filters for modifying settings, like which CPT:s (on plugins_loaded, prio 11)
-		add_action('plugins_loaded', array(&$this, 'load_textdomain'));
-		add_action('after_setup_theme', array(&$this, 'load_shortcodes'));
-		add_action('wp_enqueue_scripts', array(&$this, 'enqueue_scripts'));
-		add_action('wp_footer', array(&$this, 'footer_script'), 999);
-		add_filter('query_vars', array(&$this, 'query_vars'));
-		add_action('wp', array(&$this, 'count'));
-		add_action('init', array(&$this, 'integrations'));
-		add_action('admin_head', array(&$this, 'admin_css'));
+        add_action('plugins_loaded', array($this, 'set_post_types_to_load'));
+		add_action('plugins_loaded', array($this, 'load_textdomain'));
+		add_action('after_setup_theme', array($this, 'load_shortcodes'));
+		add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
+		add_action('wp_footer', array($this, 'footer_script'), 999);
+		add_filter('query_vars', array($this, 'query_vars'));
+		add_action('wp', array($this, 'count'));
+		add_action('init', array($this, 'integrations'));
+		add_action('admin_head', array($this, 'admin_css'));
 
 		//Add dashboard widget
 		add_action('wp_dashboard_setup', array($this, 'dashboard_widget_register'));
@@ -42,6 +44,11 @@ class Simple_Popular_Posts
 
 		//TODO: Remove stats on uninstall
 	}
+
+
+	function set_post_types_to_load() {
+	    self::$post_types = apply_filters('spp_post_types', array('post', 'page'));
+    }
 
 	function dashboard_widget_register()
 	{
@@ -51,10 +58,8 @@ class Simple_Popular_Posts
 
 	function meta_box_register()
 	{
-		global $post;
-
 		/* Single post stats, if post is published */
-		if($post->post_status === 'publish')
+		if(get_post_status() === 'publish')
 		{
 			foreach($this::$post_types as $post_type)
 				add_meta_box('spp_stats_single', __('Post stats', $this::$td), array(&$this, 'meta_box_single'), $post_type, 'side', 'high');
@@ -83,15 +88,15 @@ class Simple_Popular_Posts
 	 */
 	function meta_box_single()
 	{
-		global $post;
+		$post_type = get_post_type_object( get_post_type(get_the_ID()))
 
 		?>
 			<div class="user-stats-single">
 				<h1>
-					<?php echo (int)get_post_meta($post->ID, '_spp_count', true); ?>
+					<?php echo (int)get_post_meta(get_the_ID(), '_spp_count', true); ?>
 				</h1>
 				<p>
-					<?php _e('Page views on this post', $this::$td); ?>
+					<?php _e('Page views on this ' . $post_type->labels->singular_name , $this::$td); ?>
 				</p>
 			</div>
 		<?php
@@ -354,6 +359,7 @@ class Simple_Popular_Posts
 
 	/**
 	 * Count function
+     * TODO: Convert to API endpoint
 	 */
 	function count()
 	{
