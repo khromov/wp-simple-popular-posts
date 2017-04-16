@@ -1,15 +1,6 @@
 <?php
 add_action('register_shortcode_ui', function() {
-
-	/**
-	* 'period' => 'month',
-	'title' => '',
-	'network' => 'false',
-	'limit' => '5',
-	'display_value' => 'relative', //number = actual number of views, relative = flames/stars system
-	'relative_value_count' => '6' //How many flames/stars etc
-	 */
-
+	
 	$fields = array(
 		array(
 			'label'       => esc_html__( 'Time period', Simple_Popular_Posts::$td ),
