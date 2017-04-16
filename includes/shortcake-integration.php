@@ -1,4 +1,7 @@
 <?php
+/**
+ * spp
+ */
 add_action('register_shortcode_ui', function() {
 	
 	$fields = array(
@@ -70,9 +73,24 @@ add_action('register_shortcode_ui', function() {
 	 * Define the Shortcode UI arguments.
 	 */
 	$shortcode_ui_args = array(
-		'label' => esc_html__( 'Simple Popular Posts: Popular posts list', Simple_Popular_Posts::$td ),
+		'label' => esc_html__( 'SPP: Popular posts list', Simple_Popular_Posts::$td ),
 		'listItemImage' => 'dashicons-list-view',
 		'attrs' => $fields,
 	);
 	shortcode_ui_register_for_shortcode( 'spp', $shortcode_ui_args );
+});
+
+/**
+ * spp-current-post
+ */
+add_action('register_shortcode_ui', function() {
+
+	$fields = array();
+
+	$shortcode_ui_args = array(
+		'label' => esc_html__( 'SPP: Current post views', Simple_Popular_Posts::$td ),
+		'listItemImage' => 'dashicons-welcome-view-site',
+		'attrs' => $fields,
+	);
+	shortcode_ui_register_for_shortcode( 'spp-current-post', $shortcode_ui_args );
 });
