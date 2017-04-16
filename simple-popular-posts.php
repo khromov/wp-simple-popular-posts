@@ -6,6 +6,7 @@ Description: Lets you display popular posts via shortcode or widget. Supports Mu
 Version: 1.0
 Author: khromov
 Author URI: http://snippets.khromov.se
+GitHub Plugin URI: khromov/wp-simple-popular-posts
 License: GPL2
 */
 
