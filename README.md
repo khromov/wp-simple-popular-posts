@@ -28,7 +28,11 @@ lists of most viewed posts.
 
 You can also use Shortcake or Visual Composer to see available options.
 
-### Hook and filter API
+### Hooks and filters
+
+*Documentation coming soon*
+
+### Public class API
 
 *Documentation coming soon*
 
