@@ -16,6 +16,22 @@ lists of most viewed posts.
 * Supports [Visual Composer](https://vc.wpbakery.com/) and [Shortcake](https://wordpress.org/plugins/shortcode-ui/) for easy shortcode usage
 * Small codebase & lightweight
 
+### Shortcodes
+
+**Display a list of popular posts**
+                      
+`[spp period="day || week || month || year || all" title="A title" network="true || false" limit="5" display_value="relative || <empty>" relative_value_count]`
+
+**Display amount of views on a specific post**
+
+`[spp-current-post]`
+
+You can also use Shortcake or Visual Composer to see available options.
+
+### Hook and filter API
+
+*Documentation coming soon*
+
 ### Screenshots
 
 **Metabox when editing content**
